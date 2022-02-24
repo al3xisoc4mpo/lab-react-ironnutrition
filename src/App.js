@@ -14,7 +14,7 @@ function App() {
   return (
     <>
 
-      {
+      {/* {
         foods.map(food => {
           return (
             <>
@@ -23,9 +23,20 @@ function App() {
             </>
           )
         })
+      } */}
+
+      {/* <FoodBox food={foodBox1}/> */}
+
+
+      {
+        foods.map(food => {
+          return (
+            <FoodBox food={food}/>
+          )
+        })
       }
 
-      <FoodBox food={foodBox1}/>
+
 
     </>
   );
