@@ -1,11 +1,15 @@
 import './App.css';
+import FoodBox from './components/FoodBox';
 import foods from './foods.json';
 
 function App() {
 
-  // const [food,setFood] = useState()
-
-
+  const foodBox1 = {
+    name: "Orange",
+    calories: 85,
+    image: "https://i.imgur.com/abKGOcv.jpg",
+    servings: 1
+  }
 
   return (
     <>
@@ -20,6 +24,8 @@ function App() {
           )
         })
       }
+
+      <FoodBox food={foodBox1}/>
 
     </>
   );
