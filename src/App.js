@@ -1,8 +1,11 @@
+import { Divider } from 'antd';
 import { useState } from 'react';
 import './App.css';
 import AddFoodForm from './components/AddFoodForm';
 import FoodBox from './components/FoodBox';
+import Search from './components/Search';
 import foodsJSON from './foods.json';
+
 
 function App() {
 
@@ -29,7 +32,7 @@ function App() {
 
     let filteredFoods;
 
-    if (str === 'All') {
+    if (str === '') {
       filteredFoods = foodsData;
     } else {
       filteredFoods = foodsData.filter(foodData => {
@@ -59,6 +62,9 @@ function App() {
 
       <AddFoodForm addFood={addFood}/>
 
+      <Search filterFoodsList={filterFoodsList} />
+
+      <Divider>List</Divider>
       {
         foods.map((food,index) => {
           return (
