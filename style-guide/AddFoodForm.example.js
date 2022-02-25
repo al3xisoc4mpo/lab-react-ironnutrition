@@ -14,10 +14,10 @@ function AddFoodForm(props) {
       <Input value={undefined} type="text" onChange={() => {}} />
 
       <label>Image</label>
-      {/* render antd <Input /> type="text" here */}
+      <input value={} type="text" onChange={} />
 
       <label>Calories</label>
-      {/* render antd <Input /> type="number" here */}
+      <input value={} type="number" onChange={} />
 
       <label>Servings</label>
       {/* render antd <Input /> type="number" here */}
