@@ -1,4 +1,4 @@
-import { Divider } from 'antd';
+import { Divider,Row } from 'antd';
 import { useState } from 'react';
 import './App.css';
 import AddFoodForm from './components/AddFoodForm';
@@ -20,8 +20,8 @@ function App() {
   const [foodsData,setFoodsData] = useState(foodsJSON);
 
   const addFood = newFood => {
-    const updatedFoodsData = [...foodsData, newFood];
-    const updatedFoods = [...foods, newFood];
+    const updatedFoodsData = [newFood, ...foodsData];
+    const updatedFoods = [newFood,...foods];
 
     setFoodsData(updatedFoodsData);
     setFoods(updatedFoods);
@@ -41,6 +41,19 @@ function App() {
     }
     
     setFoods(filteredFoods);
+
+  }
+
+  const deleteFood = name => {
+
+    const filteredFoods = foodsData.filter( food => {
+			return food.name !== name
+		})
+
+  setFoodsData(filteredFoods)
+  setFoods(filteredFoods)
+
+  return
 
   }
 
@@ -65,13 +78,16 @@ function App() {
       <Search filterFoodsList={filterFoodsList} />
 
       <Divider>List</Divider>
+
+      <Row>
       {
         foods.map((food,index) => {
           return (
-            <FoodBox food={food} key={index}/>
+            <FoodBox food={food} key={index} deleteFood={deleteFood}/>
           )
         })
       }
+      </Row>
 
     </>
   );

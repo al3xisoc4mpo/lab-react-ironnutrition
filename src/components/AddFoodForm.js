@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Divider, Input } from 'antd';
-import { nanoid } from "nanoid"
 
 export default function AddFoodForm(props) {
     console.log(props)
@@ -18,7 +17,6 @@ export default function AddFoodForm(props) {
 
         setNewFood({
 			...newfood,
-			id: nanoid(),
 		 	[event.target.name]: event.target.value
 		})
 
